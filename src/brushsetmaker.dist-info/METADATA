@@ -3,9 +3,9 @@ Briefcase-Version: 0.3.25
 Name: brushsetmaker
 Formal-Name: BrushsetMaker
 App-ID: dev.bepis.brushsetmaker
-Version: 0.1.0
-Home-page: https://github.com/bepisdev/brushset-compiler
-Download-URL: https://github.com/bepisdev/brushset-compiler
+Version: 0.2.0
+Home-page: https://bepisdev.github.io/brushsetmaker/
+Download-URL: https://github.com/bepisdev/brushsetmaker/tags
 Author: Josh Burns
 Author-email: joshyburnss@gmail.com
 Summary: macOS utility to compile brushsets for Procreate
