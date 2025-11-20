@@ -15,7 +15,7 @@ brushsetmaker = "brushsetmaker.app:main"
 project_name = "BrushsetMaker"
 bundle = "dev.bepis"
 version = "0.1.0"
-url = "https://github.com/bepisdev/brushset-compiler"
+url = "https://github.com/bepisdev/brushsetmaker"
 license = {file = "LICENSE"}
 author = "Bepis Dev"
 author_email = "dev@bepis.dev"
