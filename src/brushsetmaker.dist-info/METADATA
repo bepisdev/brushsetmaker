@@ -6,6 +6,6 @@ App-ID: dev.bepis.brushsetmaker
 Version: 0.1.0
 Home-page: https://github.com/bepisdev/brushset-compiler
 Download-URL: https://github.com/bepisdev/brushset-compiler
-Author: Bepis Dev
-Author-email: dev@bepis.dev
+Author: Josh Burns
+Author-email: joshyburnss@gmail.com
 Summary: macOS utility to compile brushsets for Procreate
