@@ -14,6 +14,7 @@ from pathlib import Path
 import toga
 from toga.style import Pack
 from toga.style.pack import COLUMN, ROW
+from . import __version__
 
 
 class BrushsetMaker(toga.App):
@@ -322,11 +323,15 @@ class BrushsetMaker(toga.App):
 
 def main():
     """Entry point for the application."""
-    return BrushsetMaker(
-        'brushsetmaker',
-        'dev.bepis.brushsetmaker',
-        description="macOS utility to compile brushsets for Procreate"
+    app = BrushsetMaker(
+        app_name='brushsetmaker',
+        formal_name='BrushsetMaker',
+        version=__version__,
+        app_id='dev.bepis.brushsetmaker',
+        author="Josh Burns",
+        description="macOS utility to compile brushsets for Procreate",
     )
+    return app
 
 
 if __name__ == '__main__':
