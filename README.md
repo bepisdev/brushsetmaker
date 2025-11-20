@@ -1,6 +1,10 @@
 # BrushsetMaker
 
-A macOS GUI application to compile brushsets for Procreate. Built with Python, Toga, and Briefcase, managed with uv.
+A macOS application to compile brushsets for Procreate. Built with Python, Toga, and Briefcase, managed with uv.
+
+## Screenshot
+
+![BrushsetMaker Application](screenshot.png)
 
 ## Features
 
