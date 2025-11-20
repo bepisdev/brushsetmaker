@@ -1,6 +1,6 @@
 [project]
 name = "brushsetmaker"
-version = "0.1.0"
+version = "0.2.0"
 description = "macOS utility to compile brushsets for Procreate"
 readme = "README.md"
 requires-python = ">=3.12"
