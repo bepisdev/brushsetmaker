@@ -73,8 +73,8 @@ MIT License - See LICENSE file for details
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## v1.0 TODO
-- [ ] App Icon
-- [ ] Better metadata
-- [ ] Code organisation and seperation
+- [x] App Icon
+- [x] Better metadata
+- [x] Code organisation and seperation
 - [ ] Top menu bar
 - [ ] `.plist` editor / brushset customization
