@@ -1,0 +1,15 @@
+{% if include.title %}
+<div class="notification notification-{{ include.type | default: 'info' }}">
+  {% if include.icon %}
+  <span class="notification-icon">{{ include.icon }}</span>
+  {% endif %}
+  <div class="notification-content">
+    {% if include.title %}
+    <h4 class="notification-title">{{ include.title }}</h4>
+    {% endif %}
+    <div class="notification-body">
+      {{ include.content | markdownify }}
+    </div>
+  </div>
+</div>
+{% endif %}

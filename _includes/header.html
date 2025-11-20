@@ -1,0 +1,39 @@
+<header class="site-header">
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-brand">
+        <a href="{{ '/' | relative_url }}" class="logo">
+          <span class="logo-icon">🎨</span>
+          <span class="logo-text">{{ site.title }}</span>
+        </a>
+      </div>
+
+      <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation">
+        <span class="navbar-toggle-icon"></span>
+      </button>
+
+      <div class="navbar-menu" id="navbarMenu">
+        <ul class="navbar-nav">
+          {% for item in site.navigation %}
+          <li class="nav-item">
+            {% if item.external %}
+            <a href="{{ item.url }}" class="nav-link" target="_blank" rel="noopener">
+              {{ item.title }}
+              <svg class="external-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+            {% else %}
+            <a href="{{ item.url | relative_url }}" class="nav-link {% if page.url == item.url %}active{% endif %}">
+              {{ item.title }}
+            </a>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

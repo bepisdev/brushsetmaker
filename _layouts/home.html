@@ -1,0 +1,70 @@
+---
+layout: default
+---
+
+<div class="home-layout">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">{{ page.hero.title | default: site.title }}</h1>
+        <p class="hero-subtitle">{{ page.hero.subtitle | default: site.description }}</p>
+        <div class="hero-actions">
+          {% if page.hero.primary_button %}
+          <a href="{{ page.hero.primary_button.url }}" class="btn btn-primary btn-lg">
+            {{ page.hero.primary_button.text }}
+          </a>
+          {% endif %}
+          {% if page.hero.secondary_button %}
+          <a href="{{ page.hero.secondary_button.url }}" class="btn btn-secondary btn-lg">
+            {{ page.hero.secondary_button.text }}
+          </a>
+          {% endif %}
+        </div>
+      </div>
+      {% if page.hero.image %}
+      <div class="hero-image">
+        <img src="{{ page.hero.image | relative_url }}" alt="{{ site.title }} Screenshot">
+      </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container">
+    {{ content }}
+  </div>
+
+  {% if page.show_features %}
+  <!-- Features Section -->
+  <section id="features" class="features-section">
+    <div class="container">
+      <h2 class="section-title">Features</h2>
+      <div class="features-grid">
+        {% for feature in page.features %}
+        <div class="feature-card">
+          <div class="feature-icon">{{ feature.icon }}</div>
+          <h3 class="feature-title">{{ feature.title }}</h3>
+          <p class="feature-description">{{ feature.description }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  {% if page.show_cta %}
+  <!-- Call to Action -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>{{ page.cta.title }}</h2>
+        <p>{{ page.cta.description }}</p>
+        <a href="{{ page.cta.button.url }}" class="btn btn-primary btn-lg">
+          {{ page.cta.button.text }}
+        </a>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+</div>

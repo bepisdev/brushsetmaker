@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  {% seo %}
+  
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}">
+  
+  <!-- Theme color -->
+  <meta name="theme-color" content="{{ site.theme_color | default: '#6366f1' }}">
+  
+  {% if page.custom_css %}
+    <link rel="stylesheet" href="{{ page.custom_css | relative_url }}">
+  {% endif %}
+</head>
+<body class="{{ page.layout }}">
+  
+  {% include header.html %}
+  
+  <main id="main-content">
+    {{ content }}
+  </main>
+  
+  {% include footer.html %}
+  
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  {% if page.custom_js %}
+    <script src="{{ page.custom_js | relative_url }}"></script>
+  {% endif %}
+</body>
+</html>
