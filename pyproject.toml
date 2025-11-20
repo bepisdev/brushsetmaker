@@ -14,11 +14,11 @@ brushsetmaker = "brushsetmaker.app:main"
 [tool.briefcase]
 project_name = "BrushsetMaker"
 bundle = "dev.bepis"
-version = "0.1.0"
+version = "0.2.0"
 url = "https://github.com/bepisdev/brushsetmaker"
 license = {file = "LICENSE"}
-author = "Bepis Dev"
-author_email = "dev@bepis.dev"
+author = "Josh Burns"
+author_email = "joshyburnss@gmail.com"
 
 [tool.briefcase.app.brushsetmaker]
 formal_name = "BrushsetMaker"
