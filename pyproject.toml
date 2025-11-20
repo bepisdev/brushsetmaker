@@ -5,7 +5,6 @@ description = "macOS utility to compile brushsets for Procreate"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "toga>=0.4.0",
     "briefcase>=0.3.17",
 ]
 
@@ -17,7 +16,7 @@ project_name = "BrushsetMaker"
 bundle = "dev.bepis"
 version = "0.1.0"
 url = "https://github.com/bepisdev/brushset-compiler"
-license.file = "LICENSE"
+license = {file = "LICENSE"}
 author = "Bepis Dev"
 author_email = "dev@bepis.dev"
 
@@ -25,7 +24,6 @@ author_email = "dev@bepis.dev"
 formal_name = "BrushsetMaker"
 description = "macOS utility to compile brushsets for Procreate"
 long_description = "BrushsetMaker allows you to select a root folder and automatically zip each subfolder's contents, renaming them to .brushset files for use in Procreate."
-icon = "src/brushsetmaker/resources/brushsetmaker"
 sources = ["src/brushsetmaker"]
 requires = [
     "toga>=0.4.0",
