@@ -329,8 +329,9 @@ def main():
         version=__version__,
         app_id='dev.bepis.brushsetmaker',
         author="Josh Burns",
-        description="macOS utility to compile brushsets for Procreate",
+        description="macOS utility to compile brushsets for Procreate"
     )
+
     return app
 
 
