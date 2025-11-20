@@ -37,14 +37,21 @@ pip install uv
 #### 2. Clone the repository
 
 ```bash
-git clone https://github.com/bepisdev/brushset-compiler.git
-cd brushset-compiler
+git clone https://github.com/bepisdev/brushsetmaker.git
+cd brushsetmaker
 ```
 
 #### 3. Install dependencies
 
 ```bash
 uv sync
+```
+
+#### 4. Build app
+
+```bash
+uv run briefcase build
+uv run briefcase package
 ```
 
 ## Usage
