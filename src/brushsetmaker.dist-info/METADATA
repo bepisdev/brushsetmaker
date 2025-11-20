@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Briefcase-Version: 0.3.25
+Name: brushsetmaker
+Formal-Name: BrushsetMaker
+App-ID: dev.bepis.brushsetmaker
+Version: 0.1.0
+Home-page: https://github.com/bepisdev/brushset-compiler
+Download-URL: https://github.com/bepisdev/brushset-compiler
+Author: Bepis Dev
+Author-email: dev@bepis.dev
+Summary: macOS utility to compile brushsets for Procreate
