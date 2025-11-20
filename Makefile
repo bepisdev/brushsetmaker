@@ -23,35 +23,17 @@ package:
 # Clean all build artifacts, caches, and gitignored files
 clean:
 	@echo "Cleaning build artifacts and cached files..."
-	# Python caches
 	find . -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null || true
 	find . -type f -name "*.pyc" -delete 2>/dev/null || true
 	find . -type f -name "*.pyo" -delete 2>/dev/null || true
 	find . -type f -name "*.pyd" -delete 2>/dev/null || true
 	find . -type f -name "*.so" -delete 2>/dev/null || true
-	# Build directories
 	rm -rf build/
 	rm -rf dist/
-	rm -rf sdist/
-	rm -rf wheels/
-	rm -rf *.egg-info/
-	rm -rf .eggs/
-	# Briefcase builds
-	rm -rf macOS/
-	rm -rf linux/
-	rm -rf windows/
-	rm -rf iOS/
-	rm -rf android/
-	rm -rf web/
-	rm -rf *.app/
-	rm -rf *.dmg
-	# Virtual environments
 	rm -rf venv/
 	rm -rf env/
 	rm -rf ENV/
 	rm -rf .venv/
-	# uv
-	rm -rf .uv/
 	rm -f uv.lock
 	# IDE files
 	rm -rf .vscode/
@@ -59,8 +41,6 @@ clean:
 	find . -type f -name "*.swp" -delete 2>/dev/null || true
 	find . -type f -name "*.swo" -delete 2>/dev/null || true
 	find . -type f -name "*~" -delete 2>/dev/null || true
-	# macOS files
 	find . -type f -name ".DS_Store" -delete 2>/dev/null || true
-	# Logs
 	find . -type f -name "*.log" -delete 2>/dev/null || true
 	@echo "Clean complete!"
