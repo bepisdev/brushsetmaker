@@ -10,15 +10,15 @@ help:
 
 # Run the app in development mode
 dev:
-	briefcase dev
+	uv run briefcase dev
 
 # Build the application
 build:
-	briefcase build
+	uv run briefcase build
 
 # Package the application as .dmg
 package:
-	briefcase package
+	uv run briefcase package
 
 # Clean all build artifacts, caches, and gitignored files
 clean:
