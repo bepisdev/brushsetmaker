@@ -30,6 +30,7 @@ requires = [
 ]
 
 [tool.briefcase.app.brushsetmaker.macOS]
+icon = "src/brushsetmaker/icon"
 requires = [
     "toga-cocoa>=0.4.0",
 ]

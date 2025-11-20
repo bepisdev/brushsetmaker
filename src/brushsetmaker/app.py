@@ -51,7 +51,8 @@ def main():
         app_id='dev.bepis.brushsetmaker',
         author="Josh Burns",
         description="macOS utility to compile brushsets for Procreate",
-        home_page="https://bepisdev.github.io/brushsetmaker/"
+        home_page="https://bepisdev.github.io/brushsetmaker/",
+        icon='icon.icns'
     )
     return app
 
