@@ -22,69 +22,30 @@ A macOS application to compile brushsets for Procreate. Built with Python, Toga,
 
 ## Installation
 
-### 1. Install uv
+### Download the latest release
+
+You can download the latest release from [here](https://github.com/bepisdev/brushsetmaker/tags).
+
+### Build From Source
+
+#### 1. Install uv
 
 ```bash
 pip install uv
 ```
 
-### 2. Clone the repository
+#### 2. Clone the repository
 
 ```bash
 git clone https://github.com/bepisdev/brushset-compiler.git
 cd brushset-compiler
 ```
 
-### 3. Install dependencies
+#### 3. Install dependencies
 
 ```bash
 uv sync
 ```
-
-## Running the Application
-
-### Development Mode
-
-Run the application in development mode using uv:
-
-```bash
-uv run briefcase dev
-```
-
-This will start the application in developer mode with hot-reload capabilities.
-
-### Alternative: Direct Python execution
-
-```bash
-uv run python src/brushsetmaker/app.py
-```
-
-## Building the Application
-
-### Build for macOS
-
-To create a standalone macOS application:
-
-```bash
-# Create the Xcode project
-uv run briefcase create
-
-# Build the app
-uv run briefcase build
-
-# Run the built app
-uv run briefcase run
-```
-
-### Package the Application
-
-To create a distributable .dmg file:
-
-```bash
-uv run briefcase package
-```
-
-The packaged application will be available in the `macOS/` directory.
 
 ## Usage
 
