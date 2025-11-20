@@ -1,6 +1,6 @@
 plugin:
   - jekyll-remote-theme
-remote_theme: https://github.com/jekyllt/jasper
+remote_theme: https://github.com/emilbaehr/automatic-app-landing-page
 
 title: BrushsetMaker
 description: A compiler for Procreate brush sets
