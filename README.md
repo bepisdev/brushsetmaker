@@ -73,6 +73,7 @@ MIT License - See LICENSE file for details
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## v1.0 TODO
+
 - [x] App Icon
 - [x] Better metadata
 - [x] Code organisation and seperation
