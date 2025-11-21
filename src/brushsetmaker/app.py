@@ -17,7 +17,7 @@ class BrushsetMaker(toga.App):
         """Construct and show the Toga application."""
         # Build the main window UI
         main_box = UIBuilder.build_main_window(self)
-        self.icon = toga.Icon(__file__ + "resources/icon.png")
+        self.icon = "icon.icns"
 
         # Create the main window
         self.main_window = toga.MainWindow(title=self.formal_name)
