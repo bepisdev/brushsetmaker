@@ -32,6 +32,8 @@ build:
 # Package the application as .dmg
 package: build
 	uv run briefcase package
+	cp build/brushsetmaker/macos/BrushsetMaker.app dist/BrushsetMaker.app
+	zip BrushsetMaker.zip dist/BrushsetMaker.app
 
 # Clean all build artifacts, caches, and gitignored files
 clean:
