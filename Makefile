@@ -17,7 +17,7 @@ build:
 	uv run briefcase build
 
 # Package the application as .dmg
-package:
+package: build
 	uv run briefcase package
 
 # Clean all build artifacts, caches, and gitignored files
