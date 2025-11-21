@@ -21,8 +21,8 @@ class BrushsetMaker(toga.App):
 
         # Create the main window
         self.main_window = toga.MainWindow(title=self.formal_name)
-        self.main_window.content = main_box
-        self.main_window.show()
+        self.main_window.content = main_box # type: ignore
+        self.main_window.show() #type: ignore
 
         # Initialize state
         self.selected_folder = None
