@@ -2,7 +2,7 @@
 
 import toga
 from toga.style import Pack
-from toga.style.pack import COLUMN, ROW
+from toga.style.pack import COLUMN, ROW # type: ignore
 
 
 class UIBuilder:
@@ -19,7 +19,7 @@ class UIBuilder:
             "BrushsetMaker",
             style=Pack(padding=(0, 0, 5, 0), font_size=24, font_weight="bold")
         )
-        
+
         subtitle_label = toga.Label(
             "Procreate Brushset Compiler",
             style=Pack(padding=(0, 0, 20, 0), font_size=13)
@@ -34,17 +34,17 @@ class UIBuilder:
         # Add all widgets to main box with proper spacing
         main_box.add(title_label)
         main_box.add(subtitle_label)
-        
+
         # Add divider
         divider1 = toga.Divider(style=Pack(padding=(0, 0, 20, 0)))
         main_box.add(divider1)
-        
+
         main_box.add(single_box)
-        
+
         # Add divider between sections
         divider2 = toga.Divider(style=Pack(padding=(20, 0, 20, 0)))
         main_box.add(divider2)
-        
+
         main_box.add(bulk_box)
 
         return main_box
@@ -56,12 +56,12 @@ class UIBuilder:
             direction=COLUMN,
             padding=20
         ))
-        
+
         single_label = toga.Label(
             "📦 Package Single Brushset",
             style=Pack(padding=(0, 0, 10, 0), font_size=16, font_weight="bold")
         )
-        
+
         single_instructions = toga.Label(
             "Select a folder to package as a single .brushset file",
             style=Pack(padding=(0, 0, 15, 0), font_size=12)
@@ -72,7 +72,7 @@ class UIBuilder:
             on_press=lambda widget: app._handle_create_single(widget),
             style=Pack(padding=(0, 0, 0, 0), width=300, height=40)
         )
-        
+
         single_box.add(single_label)
         single_box.add(single_instructions)
         single_box.add(single_button)
@@ -86,7 +86,7 @@ class UIBuilder:
             direction=COLUMN,
             padding=20
         ))
-        
+
         bulk_label = toga.Label(
             "⚡ Bulk Process Brushsets",
             style=Pack(padding=(0, 0, 10, 0), font_size=16, font_weight="bold")
@@ -99,13 +99,13 @@ class UIBuilder:
 
         # Button row
         button_row = toga.Box(style=Pack(direction=ROW, padding=(0, 0, 10, 0)))
-        
+
         select_button = toga.Button(
             "Select Root Folder",
             on_press=lambda widget: app._handle_select_bulk(widget),
             style=Pack(padding=(0, 5, 0, 0), flex=1, height=36)
         )
-        
+
         button_row.add(select_button)
 
         # Selected folder label
@@ -121,7 +121,7 @@ class UIBuilder:
             enabled=False,
             style=Pack(padding=(0, 0, 0, 0), width=300, height=40)
         )
-        
+
         bulk_box.add(bulk_label)
         bulk_box.add(bulk_instructions)
         bulk_box.add(button_row)
