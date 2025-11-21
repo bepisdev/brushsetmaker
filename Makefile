@@ -7,11 +7,18 @@ help:
 	@echo "  make build     - Build the application for macOS"
 	@echo "  make package   - Package the application as a .dmg"
 	@echo "  make clean     - Remove all build artifacts and cached files"
+	@echo "  make release   - Create a new release using git flow"
+	@echo "  make setup		- Set up the development environment"
 
 # Run the app in development mode
 dev:
 	uv run briefcase dev
 
+# Set up the development environment
+setup:
+	./scripts/setup_dev.sh
+
+# Create a new release using git flow
 release:
 	uv run scripts/bump_version.py
 	uv run git add .
