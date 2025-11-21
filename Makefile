@@ -16,6 +16,7 @@ release:
 	uv run scripts/bump_version.py
 	uv run git add .
 	uv run git commit -m "Bump version"
+	git flow release finish
 
 # Build the application
 build:
