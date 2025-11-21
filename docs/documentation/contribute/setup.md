@@ -16,6 +16,7 @@ the following languages are used in this project and must have at least the stan
 - `git` - Version control
 - `make` - Task runner
 - Xcode - macOS IDE for various edge case tasks
+- `editorconfig` - Enforcing setups
 
 ## Python
 
