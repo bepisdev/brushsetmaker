@@ -4,8 +4,6 @@ title: Preparing a Release
 toc: true
 ---
 
-# How to prepare a release
-
 ## Git Flow Release Workflow
 
 This documentation outlines the process for preparing a release version using the Git Flow workflow.
