@@ -24,7 +24,7 @@ A macOS application to compile brushsets for Procreate. Built with Python, Toga,
 
 ### Download the latest release
 
-You can download the latest release from [here](https://github.com/bepisdev/brushsetmaker/tags).
+You can download the latest release from the [GitHub releases page](https://github.com/bepisdev/brushsetmaker/tags).
 
 ### Build From Source
 
