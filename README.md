@@ -4,7 +4,7 @@ A macOS application to compile brushsets for Procreate. Built with Python, Toga,
 
 ## Screenshot
 
-![BrushsetMaker Application](screenshot.png)
+![BrushsetMaker Application](./docs/screenshot.png)
 
 ## Features
 
