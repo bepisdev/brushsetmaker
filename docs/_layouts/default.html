@@ -7,13 +7,13 @@
   
   {% seo %}
   
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/brushsetmaker/assets/css/style.css' | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="{{ '/assets/icon.png' | relative_url }}">
+  <link rel="icon" type="image/png" href="{{ '/brushsetmaker/assets/icon.png' | relative_url }}">
   
   <!-- Theme color -->
   <meta name="theme-color" content="{{ site.theme_color | default: '#6366f1' }}">
@@ -32,7 +32,7 @@
   
   {% include footer.html %}
   
-  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  <script src="{{ '/brushsetmaker/assets/js/main.js' | relative_url }}"></script>
   {% if page.custom_js %}
     <script src="{{ page.custom_js | relative_url }}"></script>
   {% endif %}
