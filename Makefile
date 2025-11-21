@@ -43,8 +43,8 @@ clean:
 	rm -rf .venv/
 	rm -f uv.lock
 	# IDE files
-	rm -rf .vscode/
 	rm -rf .idea/
+	rm -rf .ruff_cache/
 	find . -type f -name "*.swp" -delete 2>/dev/null || true
 	find . -type f -name "*.swo" -delete 2>/dev/null || true
 	find . -type f -name "*~" -delete 2>/dev/null || true
