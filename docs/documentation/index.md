@@ -240,7 +240,7 @@ Download the latest version from the [releases page](/brushsetmaker/download) an
 
 ### Can I contribute to the project?
 
-Absolutely! Visit the [GitHub repository](https://github.com/bepisdev/brushsetmaker) to contribute code, report bugs, or suggest features.
+Absolutely! Visit the [GitHub repository](https://github.com/bepisdev/brushsetmaker) to contribute code, report bugs, or suggest features. Read the [Contributor Documentation](/brushsetmaker/documentation/contribute) to read about the guidelines and best practices for contributing to the project.
 
 ---
 

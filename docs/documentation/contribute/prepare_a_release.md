@@ -1,3 +1,9 @@
+---
+layout: page
+title: Preparing a Release
+toc: true
+---
+
 # How to prepare a release
 
 ## Git Flow Release Workflow

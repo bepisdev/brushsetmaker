@@ -6,7 +6,7 @@ hero:
   subtitle: "A powerful macOS application designed to streamline your brush organization workflow. Create professional brushsets from folders in seconds."
   primary_button:
     text: "Download for macOS"
-    url: "/brushsetmaker/download"
+    url: "/download"
   secondary_button:
     text: "View on GitHub"
     url: "https://github.com/bepisdev/brushsetmaker"
@@ -18,7 +18,7 @@ cta:
   description: "Download BrushsetMaker today and start creating professional Procreate brushsets in seconds."
   button:
     text: "Get Started Now"
-    url: "/brushsetmaker/download"
+    url: "/download"
 ---
 
 ## What is BrushsetMaker?

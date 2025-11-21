@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Download BrushsetMaker
-subtitle: Get the latest version for macOS
 ---
 
 ## Latest Release
