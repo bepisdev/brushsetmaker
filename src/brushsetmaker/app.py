@@ -8,6 +8,7 @@ import toga
 from . import __version__
 from .ui import UIBuilder
 from .core import BrushsetHandlers
+from .core.settings import Settings
 
 
 class BrushsetMaker(toga.App):
@@ -15,6 +16,9 @@ class BrushsetMaker(toga.App):
 
     def startup(self):
         """Construct and show the Toga application."""
+        # Initialize settings
+        self.settings = Settings()
+
         # Build the main window UI
         main_box = UIBuilder.build_main_window(self)
         self.icon = "icon.icns"
@@ -28,6 +32,24 @@ class BrushsetMaker(toga.App):
         self.selected_folder = None
         self.selected_single_folder = None
         self.progress_window = None
+
+        # Add settings command
+        self._add_settings_command()
+
+    def _add_settings_command(self):
+        """Add settings/preferences command to app menu."""
+        def open_settings_action(command, **kwargs):
+            self._handle_open_settings(command)
+            return True
+
+        settings_cmd = toga.Command(
+            open_settings_action,
+            text="Preferences...",
+            tooltip="Open application settings",
+            group=toga.Group.APP,
+            section=0
+        )
+        self.commands.add(settings_cmd)
 
     # Handler wrappers to bridge UI callbacks to handler methods
     async def _handle_create_single(self, widget):
@@ -49,6 +71,12 @@ class BrushsetMaker(toga.App):
     async def _handle_process_folders(self, widget):
         """Wrapper for process folders handler."""
         await BrushsetHandlers.process_folders(self, widget)
+
+    def _handle_open_settings(self, widget):
+        """Open the settings dialog."""
+        from .ui.settings_dialog import SettingsWindow
+        settings_window = SettingsWindow(self)
+        settings_window.show()
 
 
 def main():

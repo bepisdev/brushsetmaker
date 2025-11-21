@@ -46,6 +46,10 @@ class BrushsetHandlers:
 
         try:
             folder = Path(app.selected_single_folder)
+            settings = app.settings
+
+            # Get default save location
+            default_location = settings.get("default_save_location", str(Path.home() / "Desktop"))
 
             # Ask where to save the brushset
             save_path = await app.main_window.save_file_dialog(
@@ -62,18 +66,57 @@ class BrushsetHandlers:
             if save_path.suffix != '.brushset':
                 save_path = save_path.with_suffix('.brushset')
 
+            # Check overwrite behavior
+            if save_path.exists():
+                overwrite_behavior = settings.get("overwrite_behavior", "prompt")
+                if overwrite_behavior == "prompt":
+                    proceed = await app.main_window.confirm_dialog(
+                        "File Exists",
+                        f"{save_path.name} already exists. Overwrite?"
+                    )
+                    if not proceed:
+                        return
+                elif overwrite_behavior == "rename":
+                    counter = 1
+                    base = save_path.stem
+                    while save_path.exists():
+                        save_path = save_path.parent / f"{base}_{counter}.brushset"
+                        counter += 1
+
+            # Create backup if enabled
+            if save_path.exists() and settings.get("create_backup", False):
+                import shutil
+                backup_path = save_path.with_suffix('.brushset.backup')
+                shutil.copy2(save_path, backup_path)
+
+            # Get compression settings
+            compression_method = settings.get_compression_method()
+
             # Create the brushset
-            with zipfile.ZipFile(save_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+            with zipfile.ZipFile(save_path, 'w', compression_method) as zipf:
                 files = list(folder.rglob('*'))
+                include_hidden = settings.get("include_hidden_files", False)
+
                 for file_path in files:
                     if file_path.is_file():
+                        # Skip hidden files if setting is disabled
+                        if not include_hidden and file_path.name.startswith('.'):
+                            continue
+
                         arcname = file_path.relative_to(folder)
                         zipf.write(file_path, arcname)
 
-            await app.main_window.info_dialog(
-                "Success",
-                f"Brushset created successfully:\n{save_path.name}"
-            )
+            # Open output folder if enabled
+            if settings.get("open_output_folder", False):
+                import subprocess
+                subprocess.run(['open', '-R', str(save_path)])
+
+            # Show success dialog if enabled
+            if settings.get("show_success_dialogs", True):
+                await app.main_window.info_dialog(
+                    "Success",
+                    f"Brushset created successfully:\n{save_path.name}"
+                )
 
         except Exception as e:
             await app.main_window.error_dialog("Error", f"Error creating brushset: {e}")
@@ -164,9 +207,15 @@ class BrushsetHandlers:
 
         try:
             root_path = Path(app.selected_folder)
+            settings = app.settings
 
-            # Get all subdirectories
-            subdirs = [d for d in root_path.iterdir() if d.is_dir()]
+            # Get all subdirectories, respecting skip_hidden setting
+            subdirs = []
+            for d in root_path.iterdir():
+                if d.is_dir():
+                    if settings.should_skip_folder(d.name):
+                        continue
+                    subdirs.append(d)
 
             if not subdirs:
                 await app.main_window.info_dialog("No Folders", "No subfolders found in the selected directory.")
@@ -179,28 +228,41 @@ class BrushsetHandlers:
             error_count = 0
             errors = []
 
+            # Get settings
+            compression_method = settings.get_compression_method()
+            warn_empty = settings.get("warn_empty_folders", True)
+            stop_on_error = settings.get("error_handling", "continue") == "stop"
+            include_hidden = settings.get("include_hidden_files", False)
+            show_details = settings.get("show_progress_details", True)
+
             for idx, subdir in enumerate(subdirs, 1):
                 try:
-                    app.current_folder_label.text = f"Processing: {subdir.name}"
+                    if show_details:
+                        app.current_folder_label.text = f"Processing: {subdir.name}"
                     app.progress_label.text = f"Processing {idx} of {len(subdirs)} folders..."
 
                     # Create zip file path
                     zip_filename = f"{subdir.name}.brushset"
                     zip_path = root_path / zip_filename
 
-                    # Create zip file
-                    with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+                    # Create zip file with compression settings
+                    with zipfile.ZipFile(zip_path, 'w', compression_method) as zipf:
                         # Get all files in the subfolder
                         files = list(subdir.rglob('*'))
 
                         if not files:
-                            errors.append(f"{subdir.name}: Folder is empty")
-                            error_count += 1
+                            if warn_empty:
+                                errors.append(f"{subdir.name}: Folder is empty")
+                                error_count += 1
                             continue
 
                         # Add each file to the zip
                         for file_path in files:
                             if file_path.is_file():
+                                # Skip hidden files if setting is disabled
+                                if not include_hidden and file_path.name.startswith('.'):
+                                    continue
+
                                 # Calculate relative path from subfolder
                                 arcname = file_path.relative_to(subdir)
                                 zipf.write(file_path, arcname)
@@ -211,12 +273,20 @@ class BrushsetHandlers:
                     errors.append(f"{subdir.name}: {str(e)}")
                     error_count += 1
 
+                    if stop_on_error:
+                        break
+
                 # Update progress bar
                 app.progress_bar.value = idx
 
             # Close progress window
             app.progress_window.close()
             app.progress_window = None
+
+            # Open output folder if enabled
+            if settings.get("open_output_folder", False):
+                import subprocess
+                subprocess.run(['open', str(root_path)])
 
             # Show completion dialog
             if error_count > 0:
@@ -228,10 +298,11 @@ class BrushsetHandlers:
                     f"Successfully processed: {processed_count}\nErrors: {error_count}\n\nErrors:\n{error_details}"
                 )
             else:
-                await app.main_window.info_dialog(
-                    "Success",
-                    f"Successfully processed all {processed_count} brushsets!"
-                )
+                if settings.get("show_success_dialogs", True):
+                    await app.main_window.info_dialog(
+                        "Success",
+                        f"Successfully processed all {processed_count} brushsets!"
+                    )
 
         except Exception as e:
             if app.progress_window:
