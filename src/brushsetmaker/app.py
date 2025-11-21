@@ -26,12 +26,21 @@ class BrushsetMaker(toga.App):
 
         # Initialize state
         self.selected_folder = None
+        self.selected_single_folder = None
         self.progress_window = None
 
     # Handler wrappers to bridge UI callbacks to handler methods
     async def _handle_create_single(self, widget):
         """Wrapper for create single brushset handler."""
         await BrushsetHandlers.create_single_brushset(self, widget)
+
+    async def _handle_compile_single(self, widget):
+        """Wrapper for compile single brushset handler."""
+        await BrushsetHandlers.compile_single_brushset(self, widget)
+
+    async def _handle_edit_metadata(self, widget):
+        """Wrapper for edit metadata handler."""
+        await BrushsetHandlers.open_metadata_editor(self, widget)
 
     async def _handle_select_bulk(self, widget):
         """Wrapper for select bulk folder handler."""

@@ -68,14 +68,40 @@ class UIBuilder:
         )
 
         single_button = toga.Button(
-            "Select Folder & Create Brushset",
-            on_press=lambda widget: app._handle_create_single(widget),
+            "Select Folder",
+            on_press=app._handle_create_single,
             style=Pack(padding=(0, 0, 0, 0), width=300, height=40)
         )
+
+        # Selected folder label (hidden initially)
+        app.single_folder_label = toga.Label(
+            "",
+            style=Pack(padding=(15, 0, 15, 0), font_size=11)
+        )
+
+        # Action buttons row (hidden initially)
+        app.single_actions_box = toga.Box(style=Pack(direction=ROW, padding=(0, 0, 0, 0)))
+
+        app.compile_button = toga.Button(
+            "Create Brushset",
+            on_press=app._handle_compile_single,
+            style=Pack(padding=(0, 5, 0, 0), flex=1, height=40)
+        )
+
+        app.edit_metadata_button = toga.Button(
+            "Edit Metadata",
+            on_press=app._handle_edit_metadata,
+            style=Pack(padding=(0, 0, 0, 0), flex=1, height=40)
+        )
+
+        app.single_actions_box.add(app.compile_button)
+        app.single_actions_box.add(app.edit_metadata_button)
 
         single_box.add(single_label)
         single_box.add(single_instructions)
         single_box.add(single_button)
+        single_box.add(app.single_folder_label)
+        single_box.add(app.single_actions_box)
 
         return single_box
 
@@ -102,7 +128,7 @@ class UIBuilder:
 
         select_button = toga.Button(
             "Select Root Folder",
-            on_press=lambda widget: app._handle_select_bulk(widget),
+            on_press=app._handle_select_bulk,
             style=Pack(padding=(0, 5, 0, 0), flex=1, height=36)
         )
 
@@ -117,7 +143,7 @@ class UIBuilder:
         # Process button
         app.process_button = toga.Button(
             "Process All Subfolders",
-            on_press=lambda widget: app._handle_process_folders(widget),
+            on_press=app._handle_process_folders,
             enabled=False,
             style=Pack(padding=(0, 0, 0, 0), width=300, height=40)
         )
