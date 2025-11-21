@@ -16,7 +16,7 @@ Welcome to the contributor documentation! This guide will help you get started w
 - [Pull Request Process](./pr-process.md) - Submit your contributions 
 -->
 - [Code Style Guide](style-guide) - Learn about our coding standards
-- [Prepare a Relase](prepare_a_release) - The process used to prepare a version release
+- [Prepare a Relase](prepare-a-release) - The process used to prepare a version release
 - [Development Setup](setup) - Set up your development environment
 
 ## Community
