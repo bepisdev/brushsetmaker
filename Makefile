@@ -12,6 +12,11 @@ help:
 dev:
 	uv run briefcase dev
 
+release:
+	uv run scripts/bump_version.py
+	uv run git add .
+	uv run git commit -m "Bump version"
+
 # Build the application
 build:
 	uv run briefcase build
