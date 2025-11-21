@@ -63,12 +63,14 @@ Git Flow is a branching model that defines a strict branching structure designed
 
     This will:
     - Generate a `BrushsetMaker.app` in `build/brushsetmaker/macos/app/`
+    - Generate a `BrushsetMaker.zip` in `build/brushsetmaker/macos/app/`
     - Generate a `BrushsetMaker-<version>.dmg` in `dist/`
 
 6. **Create Release on Github**
     - Label the release as the version number
     - Fill out the release notes with the changelog
-    - Upload the `.dmg` and a compressed version (`.zip`) of the `.app` to the release artifacts.
+    - Upload the `.dmg` and the `.zip` to the release assets
+    - Rename the `.zip` to `BrushsetMaker-<version>.zip`
 
 ### Best Practices
 
