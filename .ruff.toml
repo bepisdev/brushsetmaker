@@ -1,0 +1,11 @@
+# Ruff configuration for BrushsetMaker
+#
+# This file provides a quick reference to the ruff configuration.
+# The actual configuration is defined in pyproject.toml under [tool.ruff]
+#
+# For more details on the configuration, see:
+# - Style guide: docs/documentation/contribute/style-guide.md
+# - Ruff docs: https://docs.astral.sh/ruff/
+
+# All configuration is in pyproject.toml
+# This file exists for documentation purposes only
