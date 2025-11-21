@@ -1,0 +1,77 @@
+# Site settings
+title: BrushsetMaker
+description: A powerful macOS application to compile brushsets for Procreate
+baseurl: "/brushsetmaker"
+url: "https://bepisdev.github.io"
+repository: bepisdev/brushsetmaker
+
+# Author information
+author:
+  name: bepisdev
+  email: joshyburnss@gmail.com
+  github: bepisdev
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+
+# Theme settings
+theme_color: "#6366f1"
+accent_color: "#8b5cf6"
+
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: Download
+    url: /download
+  - title: Documentation
+    url: /documentation
+  - title: GitHub
+    url: https://github.com/bepisdev/brushsetmaker
+    external: true
+
+# Social links
+social:
+  github: bepisdev/brushsetmaker
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .bundle
+  - .git
+  - .gitignore
+  - Makefile
+  - pyproject.toml
+  - src/
+  - build/
+  - logs/
+  - "*.py"
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "docs"
+    values:
+      layout: "page"
