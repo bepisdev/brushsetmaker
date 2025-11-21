@@ -73,13 +73,13 @@ MIT License - See LICENSE file for details
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## v1.0 TODO
+
 - [x] App Icon
 - [x] Better metadata
 - [x] Code organisation and seperation
 - [ ] Top menu bar
 - [ ] `.plist` editor / brushset customization
-- [ ] Update and improve website
-- [ ] Move website to seperate branch
+- [x] Update and improve website
 - [ ] Script release prep (increment semver based on flag, create zip of .app and move .zip and .dmg to a 'release' folder in root)
 - [ ] Proper 'about' prompt
 - [ ] Improved UI with seperate screens for multiple features

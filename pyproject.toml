@@ -1,11 +1,12 @@
 [project]
 name = "brushsetmaker"
-version = "0.2.2"
+version = "0.2.3"
 description = "macOS utility to compile brushsets for Procreate"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "briefcase>=0.3.17",
+    "toga>=0.5.2",
 ]
 
 [project.scripts]
@@ -14,7 +15,7 @@ brushsetmaker = "brushsetmaker.app:main"
 [tool.briefcase]
 project_name = "BrushsetMaker"
 bundle = "dev.bepis"
-version = "0.2.2"
+version = "0.2.3"
 url = "https://github.com/bepisdev/brushsetmaker"
 license = {file = "LICENSE"}
 author = "Josh Burns"
@@ -34,3 +35,84 @@ icon = "src/brushsetmaker/icon"
 requires = [
     "toga-cocoa>=0.4.0",
 ]
+
+[tool.ruff]
+# Target Python 3.12+
+target-version = "py312"
+
+# Maximum line length: 100 characters (soft limit from style guide)
+line-length = 100
+
+# Exclude common directories
+exclude = [
+    ".git",
+    ".venv",
+    "venv",
+    "__pycache__",
+    "build",
+    "dist",
+    ".eggs",
+    "*.egg-info",
+]
+
+[tool.ruff.lint]
+# Enable recommended rules plus additional checks
+select = [
+    "E",      # pycodestyle errors
+    "W",      # pycodestyle warnings
+    "F",      # pyflakes
+    "I",      # isort (import sorting)
+    "N",      # pep8-naming
+    "UP",     # pyupgrade (modern Python syntax)
+    "B",      # flake8-bugbear
+    "C4",     # flake8-comprehensions
+    "SIM",    # flake8-simplify
+    "RET",    # flake8-return
+    "ARG",    # flake8-unused-arguments
+    "PTH",    # flake8-use-pathlib
+    "PL",     # pylint
+    "RUF",    # ruff-specific rules
+]
+
+# Disable specific rules that conflict with our style
+ignore = [
+    "E501",    # Line too long (handled by formatter, soft limit)
+    "PLR0913", # Too many arguments - common in UI code
+    "PLR2004", # Magic value in comparison - acceptable for UI constants
+    "N802",    # Function name should be lowercase - allow for async handlers
+    "SIM108",  # Use ternary operator - not always more readable
+]
+
+# Allow fix for all enabled rules (when `--fix` is provided)
+fixable = ["ALL"]
+unfixable = []
+
+# Allow unused variables when underscore-prefixed
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.lint.isort]
+# Import organization from style guide
+# Order: standard library, third-party, local
+force-sort-within-sections = true
+known-first-party = ["brushsetmaker"]
+section-order = ["future", "standard-library", "third-party", "first-party", "local-folder"]
+
+[tool.ruff.lint.pydocstyle]
+# Use Google-style docstrings (matches our style guide)
+convention = "google"
+
+[tool.ruff.format]
+# Use double quotes for strings (from style guide)
+quote-style = "double"
+
+# Use 4 spaces for indentation (from style guide)
+indent-style = "space"
+
+# Respect magic trailing comma for multiline
+skip-magic-trailing-comma = false
+
+# Unix line endings
+line-ending = "lf"
+
+# Format docstrings
+docstring-code-format = true
