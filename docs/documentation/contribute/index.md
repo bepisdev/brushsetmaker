@@ -11,11 +11,13 @@ Welcome to the contributor documentation! This guide will help you get started w
 
 ## Getting Started
 
-<!-- - [Development Setup](./setup.md) - Set up your development environment
+<!-- 
 - [Testing Guidelines](./testing.md) - How to write and run tests
-- [Pull Request Process](./pr-process.md) - Submit your contributions -->
+- [Pull Request Process](./pr-process.md) - Submit your contributions 
+-->
 - [Code Style Guide](style-guide) - Learn about our coding standards
 - [Prepare a Relase](prepare_a_release) - The process used to prepare a version release
+- [Development Setup](setup) - Set up your development environment
 
 ## Community
 
