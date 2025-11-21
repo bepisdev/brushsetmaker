@@ -438,6 +438,41 @@ Add bulk processing progress window
 - Pin major versions, allow minor updates: `toga>=0.4.0`
 - Document any macOS-specific dependencies in the appropriate section
 
+## Code Quality Tools
+
+### Ruff
+
+The project uses [Ruff](https://docs.astral.sh/ruff/) for linting and code formatting. The configuration is defined in `pyproject.toml` under `[tool.ruff]`.
+
+**Check code style:**
+
+```bash
+ruff check .
+```
+
+**Auto-fix issues:**
+
+```bash
+ruff check --fix .
+```
+
+**Format code:**
+
+```bash
+ruff format .
+```
+
+The ruff configuration enforces:
+
+- 100 character line length (soft limit)
+- Double quotes for strings
+- Proper import organization (stdlib → third-party → local)
+- Python 3.12+ syntax
+- Google-style docstrings
+- Pathlib usage over os.path
+
+**Pre-commit checking** is recommended before committing code.
+
 ---
 
 ## Summary

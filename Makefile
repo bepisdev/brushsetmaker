@@ -7,18 +7,25 @@ help:
 	@echo "  make build     - Build the application for macOS"
 	@echo "  make package   - Package the application as a .dmg"
 	@echo "  make clean     - Remove all build artifacts and cached files"
+	@echo "  make setup		- Set up the development environment"
 
 # Run the app in development mode
 dev:
 	uv run briefcase dev
+
+# Set up the development environment
+setup:
+	./scripts/setup_dev.sh
 
 # Build the application
 build:
 	uv run briefcase build
 
 # Package the application as .dmg
-package:
+package: build
 	uv run briefcase package
+	cp build/brushsetmaker/macos/BrushsetMaker.app dist/BrushsetMaker.app
+	zip BrushsetMaker.zip dist/BrushsetMaker.app
 
 # Clean all build artifacts, caches, and gitignored files
 clean:
