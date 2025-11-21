@@ -35,9 +35,11 @@ Git Flow is a branching model that defines a strict branching structure designed
         - `git commit -m 'bump version to <version>'`
 
 3. **Finish the Release**
+
     ```bash
     git flow release finish <version>
     ```
+
     This will:
     - Merge the release branch into `main`
     - Tag the release with the version number
@@ -45,6 +47,7 @@ Git Flow is a branching model that defines a strict branching structure designed
     - Delete the release branch
 
 4. **Push Changes**
+
     ```bash
     git push origin main
     git push origin develop
@@ -52,10 +55,12 @@ Git Flow is a branching model that defines a strict branching structure designed
     ```
 
 5. **Build the Release Package**
+
     ```bash
     make build
     make package
     ```
+
     This will:
     - Generate a `BrushsetMaker.app` in `build/brushsetmaker/macos/app/`
     - Generate a `BrushsetMaker-<version>.dmg` in `dist/`
