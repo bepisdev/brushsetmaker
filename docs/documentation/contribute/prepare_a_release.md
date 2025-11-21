@@ -24,9 +24,9 @@ Git Flow is a branching model that defines a strict branching structure designed
 
 2. **Prepare Release Changes**
     - Update version numbers in the following files
-        - `pyproject.toml`
-        - `src/brushsetmaker.dist-info/METADATA`
-        - `src/brushsetmaker/__init__.py`
+        - `pyproject.toml` (lines `3` and `17`)
+        - `src/brushsetmaker.dist-info/METADATA` (line `6`)
+        - `src/brushsetmaker/__init__.py` (line `2`)
 
 3. **Commit Release Changes**
     ```bash
