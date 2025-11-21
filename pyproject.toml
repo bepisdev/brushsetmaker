@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "briefcase>=0.3.17",
+    "toga>=0.5.2",
 ]
 
 [project.scripts]
