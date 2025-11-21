@@ -33,8 +33,9 @@ class BrushsetMaker(toga.App):
         self.selected_single_folder = None
         self.progress_window = None
 
-        # Add settings command
+        # Add menu commands
         self._add_settings_command()
+        self._add_file_menu_commands()
 
     def _add_settings_command(self):
         """Add settings/preferences command to app menu."""
@@ -50,6 +51,37 @@ class BrushsetMaker(toga.App):
             section=0
         )
         self.commands.add(settings_cmd)
+
+    def _add_file_menu_commands(self):
+        """Add file menu commands for folder selection."""
+        def select_single_action(command, **kwargs):
+            import asyncio
+            asyncio.create_task(self._handle_create_single(command))
+            return True
+
+        def select_bulk_action(command, **kwargs):
+            import asyncio
+            asyncio.create_task(self._handle_select_bulk(command))
+            return True
+
+        select_single_cmd = toga.Command(
+            select_single_action,
+            text="Select Single Brushset Folder...",
+            tooltip="Select a folder to package as a single brushset",
+            group=toga.Group.FILE,
+            section=1
+        )
+
+        select_bulk_cmd = toga.Command(
+            select_bulk_action,
+            text="Select Bulk Processing Folder...",
+            tooltip="Select a root folder for bulk processing",
+            group=toga.Group.FILE,
+            section=1
+        )
+
+        self.commands.add(select_single_cmd)
+        self.commands.add(select_bulk_cmd)
 
     # Handler wrappers to bridge UI callbacks to handler methods
     async def _handle_create_single(self, widget):
