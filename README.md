@@ -27,27 +27,35 @@ A macOS application to compile brushsets for Procreate. Built with Python, Toga,
 You can download the latest release from the [GitHub releases page](https://github.com/bepisdev/brushsetmaker/tags).
 
 ### Build From Source
+#### From Homebrew
 
-#### 1. Install uv
+```
+brew tap bepisdev/homebrew
+brew update
+brew install --cask bepisdev/homebrew/brushsetmaker
+```
+
+#### From Source
+##### 1. Install uv
 
 ```bash
 pip install uv
 ```
 
-#### 2. Clone the repository
+##### 2. Clone the repository
 
 ```bash
 git clone https://github.com/bepisdev/brushsetmaker.git
 cd brushsetmaker
 ```
 
-#### 3. Install dependencies
+##### 3. Install dependencies
 
 ```bash
 uv sync
 ```
 
-#### 4. Build app
+##### 4. Build app
 
 ```bash
 uv run briefcase build
@@ -77,9 +85,9 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 - [x] App Icon
 - [x] Better metadata
 - [x] Code organisation and seperation
-- [ ] Top menu bar
-- [ ] `.plist` editor / brushset customization
+- [x] Top menu bar
+- [x] `.plist` editor / brushset customization
 - [x] Update and improve website
-- [ ] Script release prep (increment semver based on flag, create zip of .app and move .zip and .dmg to a 'release' folder in root)
+- [x] Script release prep (increment semver based on flag, create zip of .app and move .zip and .dmg to a 'release' folder in root)
 - [ ] Proper 'about' prompt
-- [ ] Improved UI with seperate screens for multiple features
+- [x] Improved UI with seperate screens for multiple features
