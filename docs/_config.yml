@@ -1,8 +1,8 @@
 # Site settings
 title: BrushsetMaker
 description: A powerful macOS application to compile brushsets for Procreate
-baseurl: "/brushsetmaker"
-url: "https://bepisdev.github.io"
+baseurl: "/"
+url: "https://bepisdev.github.io/brushsetmaker"
 repository: bepisdev/brushsetmaker
 
 # Author information
