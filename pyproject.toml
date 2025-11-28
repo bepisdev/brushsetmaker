@@ -1,6 +1,6 @@
 [project]
 name = "brushsetmaker"
-version = "0.3.0"
+version = "0.4.0"
 description = "macOS utility to compile brushsets for Procreate"
 readme = "README.md"
 requires-python = ">=3.12"
@@ -15,7 +15,7 @@ brushsetmaker = "brushsetmaker.app:main"
 [tool.briefcase]
 project_name = "BrushsetMaker"
 bundle = "dev.bepis"
-version = "0.3.0"
+version = "0.4.0"
 url = "https://github.com/bepisdev/brushsetmaker"
 license = {file = "LICENSE"}
 author = "Josh Burns"

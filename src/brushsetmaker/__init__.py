@@ -1,3 +1,3 @@
 """BrushsetMaker - macOS utility to compile brushsets for Procreate."""
 
-__version__ = "0.3.0"
+__version__ = "0.4.0"
