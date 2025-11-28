@@ -8,8 +8,8 @@ title: Download BrushsetMaker
 Download the most recent version of BrushsetMaker for macOS. The application is distributed as a native macOS app bundle, ready to run on your system.
 
 <div style="background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); padding: 2rem; border-radius: 1rem; text-align: center; margin: 2rem 0; color: white;">
-  <h3 style="color: white; margin-bottom: 1rem;">BrushsetMaker v0.2.0</h3>
-  <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 1.5rem;">The latest stable release for macOS</p>
+  <h3 style="color: white; margin-bottom: 1rem;">BrushsetMaker v0.4.0</h3>
+  <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 1.5rem;">Download the latest release from Github</p>
   <a href="https://github.com/bepisdev/brushsetmaker/releases/latest" class="btn btn-primary btn-lg" style="background-color: white; color: var(--primary-color);">
     Download for macOS
   </a>
