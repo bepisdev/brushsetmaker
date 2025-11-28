@@ -85,9 +85,9 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 - [x] App Icon
 - [x] Better metadata
 - [x] Code organisation and seperation
-- [ ] Top menu bar
-- [ ] `.plist` editor / brushset customization
+- [x] Top menu bar
+- [x] `.plist` editor / brushset customization
 - [x] Update and improve website
-- [ ] Script release prep (increment semver based on flag, create zip of .app and move .zip and .dmg to a 'release' folder in root)
+- [x] Script release prep (increment semver based on flag, create zip of .app and move .zip and .dmg to a 'release' folder in root)
 - [ ] Proper 'about' prompt
-- [ ] Improved UI with seperate screens for multiple features
+- [x] Improved UI with seperate screens for multiple features
